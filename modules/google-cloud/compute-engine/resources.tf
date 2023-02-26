@@ -24,5 +24,5 @@ resource "google_compute_disk" "disk" {
 }
 
 resource "google_compute_address" "static-ip-address" {
-  name = format("%s-%s", google_compute_instance.instance.name, "static-ip")
+  name = format("%s-%s", var.name, "static-ip")
 }
