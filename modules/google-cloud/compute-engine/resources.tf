@@ -20,7 +20,7 @@ resource "google_compute_disk" "disk" {
   type  = var.disk_type
   size  = var.disk_size
   image = var.disk_image
-  zone = var.region
+  zone = var.disk_zone
 }
 
 resource "google_compute_address" "static-ip-address" {

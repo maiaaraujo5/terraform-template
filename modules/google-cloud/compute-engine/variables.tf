@@ -34,6 +34,10 @@ variable "disk_labels" {
   type = map(string)
 }
 
+variable "disk_zone" {
+  type = string
+}
+
 variable "disk_size" {
   type    = number
   default = 30
