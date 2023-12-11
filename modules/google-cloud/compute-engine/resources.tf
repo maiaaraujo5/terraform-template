@@ -36,4 +36,6 @@ resource "google_compute_firewall" "tcp-firewall-rules" {
     protocol = "tcp"
     ports    = var.tcp_ports
   }
+
+  source_tags = var.tags
 }
