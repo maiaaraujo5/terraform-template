@@ -37,5 +37,5 @@ resource "google_compute_firewall" "tcp-firewall-rules" {
     ports    = var.tcp_ports
   }
 
-  source_tags = var.tags
+  source_ranges = ["0.0.0.0/0"]
 }
