@@ -16,11 +16,12 @@ resource "google_compute_instance" "instance" {
 }
 
 resource "google_compute_disk" "disk" {
-  name  = format("%s-%s", var.name, "disk")
-  type  = var.disk_type
-  size  = var.disk_size
-  image = var.disk_image
-  zone  = var.disk_zone
+  name   = format("%s-%s", var.name, "disk")
+  type   = var.disk_type
+  size   = var.disk_size
+  image  = var.disk_image
+  zone   = var.disk_zone
+  labels = var.disk_labels
 }
 
 resource "google_compute_address" "static-ip-address" {
