@@ -47,7 +47,7 @@ variable "tags" {
   type = list(string)
 }
 
-variable "tcp-ports" {
+variable "tcp_ports" {
   type = list(string)
   description = "tcp ports to add for firewall rule"
 }
