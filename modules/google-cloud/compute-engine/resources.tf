@@ -33,6 +33,6 @@ resource "google_compute_firewall" "tcp-firewall-rules" {
 
   allow {
     protocol = "tcp"
-    ports    = var.tcp-ports
+    ports    = var.tcp_ports
   }
 }
