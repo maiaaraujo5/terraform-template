@@ -29,7 +29,7 @@ resource "google_compute_address" "static-ip-address" {
 
 resource "google_compute_firewall" "tcp-firewall-rules" {
   name    = "firewall-rules"
-  network = google_compute_instance.instance.network_interface.name
+  network = google_compute_instance.instance.network_interface[0].name
 
   allow {
     protocol = "tcp"
