@@ -1,9 +1,9 @@
 resource "google_compute_instance" "instance" {
-  name         = var.name
-  machine_type = var.machine_type
+  name                      = var.name
+  machine_type              = var.machine_type
   allow_stopping_for_update = true
-  tags         = var.tags
-  zone         = var.region
+  tags                      = var.tags
+  zone                      = var.region
   boot_disk {
     source = google_compute_disk.disk.name
   }
@@ -20,9 +20,19 @@ resource "google_compute_disk" "disk" {
   type  = var.disk_type
   size  = var.disk_size
   image = var.disk_image
-  zone = var.disk_zone
+  zone  = var.disk_zone
 }
 
 resource "google_compute_address" "static-ip-address" {
   name = format("%s-%s", var.name, "static-ip")
+}
+
+resource "google_compute_firewall" "tcp-firewall-rules" {
+  name    = "firewall-rules"
+  network = google_compute_instance.instance.network_interface.name
+
+  allow {
+    protocol = "tcp"
+    ports    = var.tcp-ports
+  }
 }

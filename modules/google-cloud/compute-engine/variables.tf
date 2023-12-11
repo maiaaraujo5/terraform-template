@@ -46,3 +46,8 @@ variable "disk_size" {
 variable "tags" {
   type = list(string)
 }
+
+variable "tcp-ports" {
+  type = list(string)
+  description = "tcp ports to add for firewall rule"
+}
