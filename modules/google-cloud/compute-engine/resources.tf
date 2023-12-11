@@ -3,7 +3,7 @@ resource "google_compute_instance" "instance" {
   machine_type              = var.machine_type
   allow_stopping_for_update = true
   tags                      = var.tags
-  zone                      = var.region
+  zone                      = var.region+"-c"
   boot_disk {
     source = google_compute_disk.disk.name
   }
